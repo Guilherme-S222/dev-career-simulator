@@ -1,0 +1,44 @@
+{
+  "name": "dev-career-simulator",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Simulador de carreira para desenvolvedores",
+  "license": "MIT",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "build": "vite build && electron-builder",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "sql.js": "^1.14.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.5.0",
+    "concurrently": "^9.2.1",
+    "electron": "^42.1.0",
+    "electron-builder": "^26.8.1",
+    "globals": "^17.6.0",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^3.4.19",
+    "vite": "^8.0.12",
+    "wait-on": "^9.0.10"
+  },
+  "build": {
+    "appId": "com.devlab.careersimulator",
+    "productName": "Dev Career Simulator",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "src/database/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    }
+  }
+}
